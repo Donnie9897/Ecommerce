@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.example.tienda.classes.Category;
@@ -12,7 +13,7 @@ import com.example.tienda.classes.CategoryWithProducts;
 import java.util.List;
 
 @Dao
-public interface CategotyDao {
+public interface CategoryDao {
 
     //Access to Categories
     @Query("SELECT * FROM Category")
@@ -28,6 +29,7 @@ public interface CategotyDao {
     void updateCategoty(Category aux);
 
     //Acces to Categories with Products
+    @Transaction
     @Query("SELECT * FROM Category WHERE id = :id")
     CategoryWithProducts getCategoryWithProducts(int id);
 }

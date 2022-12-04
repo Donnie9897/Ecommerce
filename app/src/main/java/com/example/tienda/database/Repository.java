@@ -16,16 +16,15 @@ public class Repository {
     private static Repository repository;
 
     private ProductDao productDao;
-    private CategotyDao categoryDao;
+    private CategoryDao categoryDao;
 
     private Repository(Context context){
         Context appContext = context.getApplicationContext();
-        ProductDatabase productDatabase = Room.databaseBuilder(appContext, ProductDatabase.class, "product")
+        ApplicationDatabase database = Room.databaseBuilder(appContext, ApplicationDatabase.class, "product")
                 .allowMainThreadQueries().build();
-        CategoryDatabase categoryDatabase = Room.databaseBuilder(appContext, CategoryDatabase.class, "category")
-                .allowMainThreadQueries().build();
-        productDao = productDatabase.getProductDao();
-        categoryDao = categoryDatabase.getCategoryDao();
+
+        productDao = database.getProductDao();
+        categoryDao = database.getCategoryDao();
     }
 
     public static Repository get(Context context){
