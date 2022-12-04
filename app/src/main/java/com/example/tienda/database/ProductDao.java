@@ -1,4 +1,4 @@
-package com.example.tienda;
+package com.example.tienda.database;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,16 +6,19 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.tienda.classes.Product;
+
 import java.util.List;
 
 @Dao
 public interface ProductDao {
 
+    //Access to Products
     @Query("SELECT * FROM Product")
     List<Product> getProducts();
 
-    @Query("SELECT * FROM Product WHERE Id Like :productID")
-    Product getProduct(String productID);
+    @Query("SELECT * FROM Product WHERE id Like :productID")
+    Product getProduct(int productID);
 
     @Insert
     void insertProduct(Product aux);
@@ -25,4 +28,5 @@ public interface ProductDao {
 
     @Update
     void updateProduct(Product aux);
+
 }

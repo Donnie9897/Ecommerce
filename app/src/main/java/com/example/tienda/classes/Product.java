@@ -1,4 +1,4 @@
-package com.example.tienda;
+package com.example.tienda.classes;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class Product {
     @PrimaryKey
     @NonNull
-    private String Id;
+    private int id;
 
     @ColumnInfo(name = "name")
     private String name;
@@ -20,19 +20,19 @@ public class Product {
     @ColumnInfo(name = "price")
     private String price;
 
-    public Product(String name, String description, String price) {
+    @ColumnInfo(name = "categoryId")
+    private int categoryId;
+
+    public Product(String name, String description, String price, int categoryId) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.categoryId = categoryId;
     }
 
     @NonNull
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(@NonNull String id) {
-        Id = id;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -58,4 +58,8 @@ public class Product {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public int getCategoryId(){return categoryId;}
+
+    public void setCategoryId(int categoryId){this.categoryId = categoryId;}
 }
