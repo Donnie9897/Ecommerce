@@ -10,28 +10,30 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.tienda.R;
 import com.example.tienda.databinding.FragmentGalleryBinding;
+
+import org.jetbrains.annotations.Nullable;
 
 public class GalleryFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private GalleryViewModel mViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        //final TextView textView = binding.textGallery;
-       // galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+    public static GalleryFragment newInstance() {
+        return new GalleryFragment();
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_gallery, container, false);
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
+        // TODO: Use the ViewModel
+    }
+
 }

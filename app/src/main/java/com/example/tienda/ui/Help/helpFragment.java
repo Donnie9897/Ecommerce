@@ -1,4 +1,4 @@
-package com.example.tienda.ui.Cart;
+package com.example.tienda.ui.Help;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import com.example.tienda.R;
 
-public class CartFragment extends Fragment {
+public class helpFragment extends Fragment {
 
-    private CartViewModel mViewModel;
+    private HelpViewModel mViewModel;
 
-    public static CartFragment newInstance() {
-        return new CartFragment();
+    public static helpFragment newInstance() {
+        return new helpFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        return inflater.inflate(R.layout.fragment_help, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(CartViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(HelpViewModel.class);
         // TODO: Use the ViewModel
     }
 

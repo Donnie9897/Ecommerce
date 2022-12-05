@@ -6,18 +6,18 @@
     >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/bar_carrito"
         android:orderInCategory="100"
         android:icon="@drawable/ic_cart"
-        android:title="@string/action_settings"
+        android:title="Carrito"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/bar_carrito"
+        android:id="@+id/bar_notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_notification"
-        android:title="Carrito"
+        android:title="Notifications"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search"
