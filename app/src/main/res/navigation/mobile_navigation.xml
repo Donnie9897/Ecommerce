@@ -18,8 +18,34 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.tienda.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_productos"
+        android:name="com.example.tienda.ui.Producto.ProductosFragment"
+        android:label="Productos"
+        tools:layout="@layout/fragment_productos" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.tienda.ui.User.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.tienda.ui.Help.helpFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/bar_carrito"
+        android:name="com.example.tienda.ui.Cart.CartFragment"
+        android:label="Carrito"
+        tools:layout="@layout/fragment_cart" />
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.tienda.ui.Login.ui.login.LoginActivity"
+        android:label="Login"
+        tools:layout="@layout/activity_login"
+
+        />
+
 </navigation>

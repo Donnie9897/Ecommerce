@@ -15,11 +15,11 @@
             android:title="Categoria" />
 
         <item
-            android:id="@+id/nav_producto"
+            android:id="@+id/nav_productos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_producto"
-            android:title="Producto" />
+            android:title="Productos" />
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
