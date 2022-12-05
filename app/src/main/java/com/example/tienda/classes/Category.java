@@ -1,15 +1,15 @@
-package com.example.tienda;
+package com.example.tienda.classes;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Product")
-public class Product {
+@Entity(tableName = "Category")
+public class Category {
     @PrimaryKey
     @NonNull
-    private String Id;
+    private int id;
 
     @ColumnInfo(name = "name")
     private String name;
@@ -17,22 +17,18 @@ public class Product {
     @ColumnInfo(name = "description")
     private String description;
 
-    @ColumnInfo(name = "price")
-    private String price;
-
-    public Product(String name, String description, String price) {
+    public Category(String name, String description) {
         this.name = name;
         this.description = description;
-        this.price = price;
     }
 
     @NonNull
-    public String getId() {
-        return Id;
+    public int getId() {
+        return id;
     }
 
-    public void setId(@NonNull String id) {
-        Id = id;
+    public void setId(int id) {
+        this.id =  id;
     }
 
     public String getName() {
@@ -49,13 +45,5 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 }
