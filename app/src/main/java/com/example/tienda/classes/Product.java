@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class Product {
     @PrimaryKey
     @NonNull
-    private int id;
+    private String uuid;
 
     @ColumnInfo(name = "name")
     private String name;
@@ -18,12 +18,13 @@ public class Product {
     private String description;
 
     @ColumnInfo(name = "price")
-    private String price;
+    private float price;
 
     @ColumnInfo(name = "categoryId")
     private int categoryId;
 
-    public Product(String name, String description, String price, int categoryId) {
+    public Product(String uuid, String name, String description, float price, int categoryId) {
+        this.uuid = uuid;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -31,12 +32,12 @@ public class Product {
     }
 
     @NonNull
-    public int getId() {
-        return id;
+    public String getId() {
+        return uuid;
     }
 
-    public void setId(int id) {
-        this.id =  id;
+    public void setId(String uuid) {
+        this.uuid =  uuid;
     }
 
     public String getName() {
@@ -55,11 +56,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

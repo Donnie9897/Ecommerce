@@ -17,8 +17,8 @@ public interface ProductDao {
     @Query("SELECT * FROM Product")
     List<Product> getProducts();
 
-    @Query("SELECT * FROM Product WHERE id Like :productID")
-    Product getProduct(int productID);
+    @Query("SELECT * FROM Product WHERE uuid Like :productID")
+    Product getProduct(String productID);
 
     @Insert
     void insertProduct(Product aux);
@@ -28,5 +28,8 @@ public interface ProductDao {
 
     @Update
     void updateProduct(Product aux);
+
+    @Query("SELECT * FROM Product WHERE name LIKE '%' || :name || '%'")
+    List<Product> getProductsByName(String name);
 
 }
