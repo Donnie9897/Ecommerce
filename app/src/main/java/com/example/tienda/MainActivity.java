@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.example.tienda.ui.Cart.CartFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -67,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast msg = Toast.makeText(this, "Cart", Toast.LENGTH_LONG);
                 msg.show();
 
-              /*  Intent activity2 = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(activity2);*/
+                //CartFragment cart = CartFragment.newInstance();
                 return true;
 
             case 2:
