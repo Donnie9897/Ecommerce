@@ -9,78 +9,45 @@
     android:foreground="?android:attr/selectableItemBackground"
     android:paddingTop="8dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cart_image"
-        android:layout_width="273dp"
-        android:layout_height="112dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-      />
-
     <TextView
-        android:id="@+id/categoria_desc"
-        android:layout_width="267dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="48dp"
-        android:text="Candidate Biden Called Saudi Arabia a Paeefr eefr"
+        android:id="@+id/categoria_name"
+        android:layout_width="207dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="96dp"
+        android:text="Name"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cart_image" />
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <EditText
+        android:id="@+id/categoria_desc"
+        android:layout_width="208dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoria_name" />
 
     <Button
         android:id="@+id/categoria_btn"
         android:layout_width="57dp"
         android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="204dp"
+        android:layout_marginTop="36dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="57dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="276dp"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="60dp"
-        android:text="Add to Cart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_desc" />
-
-    <EditText
-        android:id="@+id/price_add"
-        android:layout_width="128dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="49dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Price"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoria_desc" />
 
     <View
         android:id="@+id/view2"
-        android:layout_width="354dp"
-        android:layout_height="10dp"
+        android:layout_width="360dp"
+        android:layout_height="12dp"
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/purple_200"
@@ -103,8 +70,8 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="11dp"
-        android:layout_height="363dp"
+        android:layout_width="12dp"
+        android:layout_height="272dp"
         android:layout_margin="8dp"
         android:background="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,7 +84,7 @@
     <View
         android:id="@+id/view4"
         android:layout_width="8dp"
-        android:layout_height="364dp"
+        android:layout_height="269dp"
         android:layout_margin="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/purple_200"

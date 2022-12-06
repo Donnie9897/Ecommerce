@@ -87,7 +87,7 @@ public class User {
     }
 
     public void addProductToCart(Product product, int cant){
-        cartProduct aux = new cartProduct(product.getId(), product.getPrice(), cant);
+        cartProduct aux = new cartProduct(product.getUuid(), product.getPrice(), cant);
         shoppingCart.add(aux);
     }
 

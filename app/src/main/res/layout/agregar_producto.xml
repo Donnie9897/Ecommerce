@@ -10,77 +10,61 @@
     android:paddingTop="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cart_image"
-        android:layout_width="273dp"
-        android:layout_height="112dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/product_image"
+        android:layout_width="117dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="40dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
 
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-      />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/categoria_desc"
-        android:layout_width="267dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="48dp"
-        android:text="Candidate Biden Called Saudi Arabia a Paeefr eefr"
+        android:id="@+id/desc_add"
+        android:layout_width="208dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="96dp"
+        android:text="Description"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cart_image" />
-
-    <Button
-        android:id="@+id/categoria_btn"
-        android:layout_width="57dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="204dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="57dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="276dp"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="60dp"
-        android:text="Add to Cart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_desc" />
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/price_add" />
 
     <EditText
         android:id="@+id/price_add"
-        android:layout_width="128dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="49dp"
+        android:layout_width="210dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Price"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_desc" />
+        app:layout_constraintTop_toBottomOf="@+id/name_add" />
+
+    <Button
+        android:id="@+id/producto_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="152dp"
+        android:background="@drawable/round_grey"
+        android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.879" />
 
     <View
         android:id="@+id/view2"
-        android:layout_width="354dp"
-        android:layout_height="10dp"
+        android:layout_width="360dp"
+        android:layout_height="12dp"
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/purple_200"
@@ -94,17 +78,16 @@
         android:layout_width="377dp"
         android:layout_height="8dp"
         android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="11dp"
         android:background="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/producto_btn" />
 
     <View
         android:id="@+id/view3"
-        android:layout_width="11dp"
-        android:layout_height="363dp"
+        android:layout_width="14dp"
+        android:layout_height="379dp"
         android:layout_margin="8dp"
         android:background="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,8 +99,8 @@
 
     <View
         android:id="@+id/view4"
-        android:layout_width="8dp"
-        android:layout_height="364dp"
+        android:layout_width="9dp"
+        android:layout_height="383dp"
         android:layout_margin="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/purple_200"
@@ -125,6 +108,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/name_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_image" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

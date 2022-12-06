@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.tienda.Product;
+
+import com.example.tienda.classes.Product;
 
 public class HomeViewModel extends ViewModel {
 
@@ -15,7 +16,7 @@ public class HomeViewModel extends ViewModel {
         mText = new MutableLiveData<>();
     //    mText.setValue("Teclado");
 
-        producto = new Product("Teclado","Un teclado RGB GAMER","120$");
+        //producto = new Product("Teclado","Un teclado RGB GAMER","120$");
 
     }
 
