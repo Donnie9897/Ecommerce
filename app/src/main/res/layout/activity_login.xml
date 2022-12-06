@@ -1,66 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".ui.Login.ui.login.LoginActivity"
     android:background="#242025"
     android:backgroundTint="#428b28"
     android:backgroundTintMode="add"
     android:scaleType="centerCrop"
-    android:visibility="visible">
+    android:visibility="visible"
+    >
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signin"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
         android:drawablePadding="20dp"
         android:hint="Username"
         android:padding="20dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        android:textColorHint="@color/white" />
 
-    <TextView
-        android:id="@+id/txt_reg"
-        android:layout_width="179dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/loginbtn"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="55dp"
-        android:gravity="right"
-        android:text="Forgot Your Password?"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
 
-    <TextView
-        android:id="@+id/txt_log"
-        android:layout_width="101dp"
-        android:layout_height="17dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="84dp"
-        android:text="|     Register Now"
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawablePadding="20dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="20dp"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_reg"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.button.MaterialButton
 
@@ -70,43 +69,24 @@
         android:layout_below="@+id/password"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="140dp"
-        android:text="LOG IN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="44dp"
-
-        android:background="#30ffffff"
-        android:drawablePadding="20dp"
-        android:hint="Password"
-        android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin" />
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="logIn"
+        android:text="LOG IN" />
 
     <TextView
-        android:id="@+id/signin"
-        android:layout_width="match_parent"
+        android:id="@+id/txt_log"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:text="Sign in"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/loginbtn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="167dp"
+        android:onClick="loadRegister"
+        android:text="Register Now"
+        android:textColor="@color/white" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

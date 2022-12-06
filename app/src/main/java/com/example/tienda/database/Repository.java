@@ -1,6 +1,7 @@
 package com.example.tienda.database;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.Context;
 
 import androidx.room.Delete;
@@ -20,8 +21,7 @@ import com.example.tienda.classes.UserWithDirections;
 import java.util.List;
 
 public class Repository {
-    @SuppressLint("StaticFieldLeak")
-    private static Repository repository;
+    private static Repository repository = null;
 
     private ProductDao productDao;
     private CategoryDao categoryDao;
@@ -30,8 +30,8 @@ public class Repository {
     private UserDao userDao;
 
     private Repository(Context context){
-        Context appContext = context.getApplicationContext();
-        ApplicationDatabase database = Room.databaseBuilder(appContext, ApplicationDatabase.class, "ECommerce")
+
+        ApplicationDatabase database = Room.databaseBuilder(context, ApplicationDatabase.class, "ECommerce")
                 .allowMainThreadQueries().build();
 
         productDao = database.getProductDao();
@@ -40,6 +40,7 @@ public class Repository {
         buysDao = database.getBuysDao();
         userDao = database.getUsersDao();
     }
+
 
     public static Repository get(Context context){
         if(repository == null){
@@ -120,4 +121,6 @@ public class Repository {
     public User getUserWithBuys(int id){
         return userDao.getUserWithBuys(id);
     }
+
+    public User checkRegister(String user, String email, String phone) {return userDao.checkRegister(user,email,phone);}
 }
