@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class BuyRegister {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
 

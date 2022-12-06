@@ -1,6 +1,7 @@
 package com.example.tienda;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,13 +13,15 @@ import android.widget.Toast;
 import com.example.tienda.classes.User;
 import com.example.tienda.database.Repository;
 import com.example.tienda.databinding.ActivityLoginBinding;
+import com.example.tienda.models.ApplicationViewModel;
 import com.example.tienda.ui.home.HomeViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
     private TextView usernameTV, passwordTV;
-    private Repository repo;
+    ApplicationViewModel applicationViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
         usernameTV = binding.username;
         passwordTV = binding.password;
-
-        repo = Repository.get(getApplicationContext());
+        applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
     }
 
     //Login Btn functionality
@@ -45,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        User user = repo.authenticate(username, password);
+        User user = applicationViewModel.authenticate(username, password);
         System.out.println("We found " + user);
         if(user == null){
             Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_LONG).show();

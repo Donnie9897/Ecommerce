@@ -1,6 +1,7 @@
 package com.example.tienda;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +12,13 @@ import android.widget.Toast;
 import com.example.tienda.classes.User;
 import com.example.tienda.database.Repository;
 import com.example.tienda.databinding.ActivityRegisterBinding;
+import com.example.tienda.models.ApplicationViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
     private TextView usernameTV, emailTV, phoneTV, passwordTV, confirmationTV;
-    private Repository repo;
+    ApplicationViewModel applicationViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        repo = Repository.get(getApplicationContext());
+        applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
 
         usernameTV = binding.username;
         emailTV = binding.email;
@@ -61,13 +63,13 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        User user = Repository.get(getApplicationContext()).checkRegister(username, email, phone);
+        User user = applicationViewModel.checkRegister(username, email, phone);
         if (user != null){
             Toast.makeText(this, "Some of the information provided has already been recorded", Toast.LENGTH_LONG).show();
             return;
         }else{
             //Save on database and go back to login
-            repo.insertUser(new User(username, password,email, phone));
+            applicationViewModel.insertUser(new User(username, password,email, phone));
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
