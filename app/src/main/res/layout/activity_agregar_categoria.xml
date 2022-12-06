@@ -7,14 +7,15 @@
     android:layout_marginHorizontal="8dp"
     android:background="@color/white"
     android:foreground="?android:attr/selectableItemBackground"
+    tools:context=".ui.gallery.agregarCategoria"
     android:paddingTop="8dp">
 
     <TextView
         android:id="@+id/categoria_name"
         android:layout_width="207dp"
         android:layout_height="46dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="92dp"
         android:text="Name"
         android:textColor="@color/black"
         android:textSize="16dp"
@@ -22,27 +23,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-    <EditText
-        android:id="@+id/categoria_desc"
-        android:layout_width="208dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_name" />
-
     <Button
         android:id="@+id/categoria_btn"
         android:layout_width="57dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_desc" />
+        tools:layout_editor_absoluteY="221dp" />
 
     <View
         android:id="@+id/view2"
