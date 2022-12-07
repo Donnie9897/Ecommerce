@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tienda.classes.Category;
+import com.example.tienda.classes.Product;
 import com.example.tienda.classes.User;
 import com.example.tienda.database.Repository;
 import com.example.tienda.databinding.ActivityLoginBinding;
@@ -31,6 +33,12 @@ public class LoginActivity extends AppCompatActivity {
         usernameTV = binding.username;
         passwordTV = binding.password;
         applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
+
+        SharedPreferences shared = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        if (shared.getAll().containsKey("userID")){
+            goLogin();
+        }
+
     }
 
     //Login Btn functionality
@@ -59,12 +67,17 @@ public class LoginActivity extends AppCompatActivity {
             myEdit.putInt("userID", user.getId());
             myEdit.putString("userName", user.getUserName());
             myEdit.apply();
+            applicationViewModel.insertCategory(new Category("Categoria Prueba","Una categoria de prueba"));
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            goLogin();
         }
     }
 
+
+    public void goLogin(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     //Register Btn functionality
     public void loadRegister(View view){
         Intent intent = new Intent(this, RegisterActivity.class);

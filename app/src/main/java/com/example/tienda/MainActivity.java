@@ -16,6 +16,7 @@ import com.example.tienda.ui.Cart.CartFragment;
 import com.example.tienda.ui.Notifications.notificationsActivity;
 
 import com.google.android.material.snackbar.Snackbar;
+
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -104,4 +104,12 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+    //Se usa en el fragmento de producto, pero hay que definirlo en la actividad padre
+    public void regProduct(View view){
+        Intent intent = new Intent(this, productFormActivity.class);
+        startActivity(intent);
+    }
+
 }

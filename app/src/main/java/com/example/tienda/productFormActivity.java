@@ -1,16 +1,15 @@
-package com.example.tienda.ui.Producto;
+package com.example.tienda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.tienda.R;
-
-public class agregarProducto extends AppCompatActivity {
+public class productFormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_producto);
+        System.out.println("\nHOLAAAAAAAAAAAAAA\n");
+        setContentView(R.layout.activity_product_form);
     }
 }
