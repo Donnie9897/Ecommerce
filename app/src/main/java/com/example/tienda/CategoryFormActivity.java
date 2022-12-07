@@ -1,16 +1,14 @@
-package com.example.tienda.ui.gallery;
+package com.example.tienda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.tienda.R;
-
-public class agregarCategoria extends AppCompatActivity {
+public class CategoryFormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_categoria);
+        setContentView(R.layout.activity_category_form);
     }
 }

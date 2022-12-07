@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.example.tienda.classes.Category;
 import com.example.tienda.ui.Cart.CartActivity;
 import com.example.tienda.ui.Cart.CartFragment;
 import com.example.tienda.ui.Notifications.notificationsActivity;
@@ -109,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
     //Se usa en el fragmento de producto, pero hay que definirlo en la actividad padre
     public void regProduct(View view){
         Intent intent = new Intent(this, productFormActivity.class);
+        startActivity(intent);
+    }
+
+    //Se usa en el fragmento de category, pero hay que definirlo en la actividad padre
+    public void regCat(View view){
+        Intent intent = new Intent(this, CategoryFormActivity.class);
         startActivity(intent);
     }
 

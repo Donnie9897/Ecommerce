@@ -38,4 +38,8 @@
     <!-- Error messages -->
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>
+    <string name="categoryFormHeader">Category Form</string>
+    <string name="clearForm">Clear</string>
+    <string name="saveForm">Save</string>
+    <string name="productForm">Product Form</string>
 </resources>

@@ -9,12 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tienda.R;
-import com.example.tienda.databinding.ActivityRegisterBinding;
-import com.example.tienda.databinding.CartBinding;
+import com.example.tienda.databinding.ActivityCartBinding;
 import com.example.tienda.models.ApplicationViewModel;
 
 public class CartActivity extends AppCompatActivity {
-    private CartBinding binding;
+    private ActivityCartBinding binding;
     private Button btn;
     private RecyclerView recycler;
     private TextView txt_1,txt_2,txt_3;
@@ -25,7 +24,7 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_cart);
 
-        binding = CartBinding.inflate(getLayoutInflater());
+        binding = ActivityCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
