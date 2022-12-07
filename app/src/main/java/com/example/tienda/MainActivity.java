@@ -1,5 +1,9 @@
 package com.example.tienda;
 
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,6 +11,9 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.example.tienda.ui.Cart.CartActivity;
+import com.example.tienda.ui.Cart.CartFragment;
+import com.example.tienda.ui.Notifications.notificationsActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -64,18 +71,24 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.bar_carrito:
                 // write your code here
-                Toast msg = Toast.makeText(this, "Cart", Toast.LENGTH_LONG);
-                msg.show();
+               /* Toast msg = Toast.makeText(this, "Cart", Toast.LENGTH_LONG);
+                msg.show();*/
 
-              /*  Intent activity2 = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(activity2);*/
+                Intent activity2 = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(activity2);
+
+
                 return true;
 
-            case 2:
+            case R.id.bar_notifications:
                 // write your code here
+
+                Intent case2 = new Intent(getApplicationContext(), notificationsActivity.class);
+                startActivity(case2);
+
                 return true;
 
-            case 3:
+            case R.id.action_search:
                 // write your code here
                 return true;
 
