@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.example.tienda.models.ApplicationViewModel;
 public class notificationsActivity extends AppCompatActivity {
     private RecyclerView recycler_aux;
     private TextView txt;
+    private Button btn;
 
     private ActivityNotificationsBinding binding;
     ApplicationViewModel applicationViewModel;
@@ -34,6 +36,14 @@ public class notificationsActivity extends AppCompatActivity {
         applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
         recycler_aux = binding.recyclerNotifications;
         txt = binding.notifications;
+        btn = binding.notifGoBack;
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

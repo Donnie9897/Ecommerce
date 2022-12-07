@@ -73,20 +73,15 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.bar_carrito:
                 // write your code here
-               /* Toast msg = Toast.makeText(this, "Cart", Toast.LENGTH_LONG);
-                msg.show();*/
-
-                Intent activity2 = new Intent(getApplicationContext(), CartActivity.class);
-                startActivity(activity2);
-
+                Intent cartActivity = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(cartActivity);
 
                 return true;
 
             case R.id.bar_notifications:
                 // write your code here
-
-                Intent case2 = new Intent(getApplicationContext(), notificationsActivity.class);
-                startActivity(case2);
+                Intent notificationsActivity = new Intent(getApplicationContext(), notificationsActivity.class);
+                startActivity(notificationsActivity);
 
                 return true;
 

@@ -8,26 +8,25 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCart"
-        android:layout_width="418dp"
-        android:layout_height="600dp"
+        android:layout_width="409dp"
+        android:layout_height="505dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="473dp"
-        android:layout_height="91dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="488dp"
+        android:layout_height="127dp"
         android:layout_marginBottom="8dp"
-        android:background="#808080"
+        android:background="#428b28"
         app:layout_constraintBottom_toTopOf="@+id/recyclerCart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/button4"
@@ -76,4 +75,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.294" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/cart_goback"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_grey"
+        android:text="Back"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerCart" />
 </androidx.constraintlayout.widget.ConstraintLayout>
