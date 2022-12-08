@@ -70,6 +70,10 @@ public class Repository {
     //CategoryFunctions
     public List<Category> getCategories() {return categoryDao.getCategories();};
 
+    public List<String> getCategoryName() {return categoryDao.getCategoryName();}
+
+    public Category checkCategoryName(String name){return categoryDao.chekName(name);}
+
     public void insertCategory(Category aux) {
         ApplicationDatabase.databaseWriteExecutor.execute(() ->
                 categoryDao.insertCategory(aux));
@@ -127,4 +131,6 @@ public class Repository {
     }
 
     public User checkRegister(String user, String email, String phone) {return userDao.checkRegister(user,email,phone);}
+
+    public User getUserById(int id){return userDao.getUserById(id);}
 }

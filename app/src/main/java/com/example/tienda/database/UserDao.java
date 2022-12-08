@@ -15,6 +15,9 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE userName like :username AND password LIKE :password")
     User authenticate(String username, String password);
 
+    @Query("SELECT * FROM User WHERE id = :id")
+    User getUserById(int id);
+
     @Insert
     void insertUser(User aux);
 

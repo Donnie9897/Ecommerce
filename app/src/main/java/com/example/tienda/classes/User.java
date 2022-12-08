@@ -27,6 +27,9 @@ public class User {
     @ColumnInfo(name = "phone")
     private String phone;
 
+    @ColumnInfo(name = "direction")
+    private String direction;
+
     @Ignore
     private List<cartProduct> shoppingCart;
 
@@ -80,6 +83,14 @@ public class User {
 
     public List<cartProduct> getShoppingCart() {
         return shoppingCart;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     public void setShoppingCart(List<cartProduct> shoppingCart) {

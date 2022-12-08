@@ -35,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
 
         SharedPreferences shared = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        if (shared.getAll().containsKey("userID")){
+        //Add another condition that checks if keepLog equals true
+        if (shared.getAll().containsKey("userID") && shared.getBoolean("keepLog",false) ){
             goLogin();
         }
 

@@ -42,4 +42,6 @@
     <string name="clearForm">Clear</string>
     <string name="saveForm">Save</string>
     <string name="productForm">Product Form</string>
+    <string name="profile">Profile</string>
+    <string name="keep_Sesion">Keep Session On</string>
 </resources>

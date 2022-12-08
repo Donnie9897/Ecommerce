@@ -34,4 +34,10 @@ public class CartActivity extends AppCompatActivity {
         txt_3 = binding.txt3;
         recycler = binding.recyclerCart;
     }
+
+    //Create a function that gets all products from cart and load it inside a List<>
+    //If user click buy, take list and add it to the database
+    //Delete all the old items from cart
+
+    //Create a new notification to the database
 }

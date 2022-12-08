@@ -32,4 +32,10 @@ public interface CategoryDao {
     @Transaction
     @Query("SELECT * FROM Category WHERE id = :id")
     CategoryWithProducts getCategoryWithProducts(int id);
+
+    @Query("SELECT name FROM Category")
+    List<String> getCategoryName();
+
+    @Query("SELECT * FROM Category WHERE name LIKE :name")
+    Category chekName(String name);
 }

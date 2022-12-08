@@ -55,6 +55,11 @@ public class ApplicationViewModel extends AndroidViewModel {
     //CategoryFunctions
     public List<Category> getCategories() {return repository.getCategories();};
 
+    public List<String> getCategoryName() {return repository.getCategoryName();}
+
+    public Category checkCategoryName(String name){return repository.checkCategoryName(name);}
+
+
     public void insertCategory(Category aux) {
                 repository.insertCategory(aux);
     }
@@ -113,4 +118,6 @@ public class ApplicationViewModel extends AndroidViewModel {
     }
 
     public User checkRegister(String user, String email, String phone) {return repository.checkRegister(user,email,phone);}
+
+    public User getUserByid(int id) {return repository.getUserById(id);}
 }
