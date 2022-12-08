@@ -18,11 +18,13 @@ import android.view.ViewGroup;
 
 import com.example.tienda.R;
 import com.example.tienda.adapters.ProductAdapter;
+import com.example.tienda.databinding.FragmentProductosBinding;
 import com.example.tienda.models.ApplicationViewModel;
 
 public class ProductosFragment extends Fragment {
 
     private ProductosViewModel mViewModel;
+    FragmentProductosBinding binding;
     RecyclerView recyclerView;
     ApplicationViewModel applicationViewModel;
     Context context;
@@ -35,12 +37,12 @@ public class ProductosFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         applicationViewModel = new ViewModelProvider(this).get(ApplicationViewModel.class);
-        View view = inflater.inflate(R.layout.fragment_productos, container, false);
-        recyclerView = view.findViewById(R.id.recyclerProductos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        context = view.getContext();
-        recyclerView.setAdapter(new ProductAdapter(view.getContext(),applicationViewModel.getProducts()));
-        return view;
+        binding= FragmentProductosBinding.inflate(inflater, container, false);
+        recyclerView = binding.recyclerProductos;
+        recyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
+        context = binding.getRoot().getContext();
+        recyclerView.setAdapter(new ProductAdapter(binding.getRoot().getContext(),applicationViewModel.getProducts(), applicationViewModel));
+        return binding.getRoot();
     }
 
     @Override

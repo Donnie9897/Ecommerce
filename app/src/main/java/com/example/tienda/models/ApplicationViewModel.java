@@ -7,14 +7,13 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.tienda.classes.BuyRegister;
+import com.example.tienda.classes.Cart;
 import com.example.tienda.classes.Category;
 import com.example.tienda.classes.CategoryWithProducts;
-import com.example.tienda.classes.Direction;
 import com.example.tienda.classes.Product;
 import com.example.tienda.classes.User;
 import com.example.tienda.classes.UserWithDirections;
 import com.example.tienda.database.Repository;
-import com.example.tienda.database.ApplicationDatabase;
 
 import java.util.List;
 
@@ -80,17 +79,25 @@ public class ApplicationViewModel extends AndroidViewModel {
                 repository.registerBuy(aux);
     }
 
+    public int getBuyID(){return repository.getID();};
+
+
     //Direction Functions
-    public void insertDirection(Direction aux) {
-        repository.insertDirection(aux);}
+    public long insertCart(Cart aux) {
+        return repository.insertToCart(aux);}
 
-    public void deleteDirection(Direction aux) {
-        repository.deleteDirection(aux);
+    public void deteCart(Cart aux) {
+        repository.deleteFromCart(aux);
     }
 
-    public void updateDirection(Direction aux){
-        repository.updateDirection(aux);
+    public void updateCart(Cart aux){
+        repository.updateCartItem(aux);
     }
+
+    public List<Cart> getCartByUserID(int id) {return repository.getCartByUserID(id);}
+
+    public Cart checkCart(int id, String productID) {return  repository.checkCart(id, productID);}
+
 
     //User Functions
     public User authenticate(String username, String password){
@@ -120,4 +127,7 @@ public class ApplicationViewModel extends AndroidViewModel {
     public User checkRegister(String user, String email, String phone) {return repository.checkRegister(user,email,phone);}
 
     public User getUserByid(int id) {return repository.getUserById(id);}
+
+
+
 }

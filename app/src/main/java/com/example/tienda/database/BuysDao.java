@@ -13,4 +13,6 @@ public interface BuysDao {
     @Insert
     void insertBuy(BuyRegister aux);
 
+    @Query("SELECT COUNT(*) FROM buyregister")
+    int getID();
 }

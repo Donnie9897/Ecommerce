@@ -14,8 +14,8 @@ public class BuyRegister {
     @ColumnInfo(name = "userID")
     private int userID;
 
-    @ColumnInfo(name = "directionId")
-    private int directionId;
+    @ColumnInfo(name = "direction")
+    private String direction;
 
     @ColumnInfo(name = "date")
     private String date;
@@ -23,9 +23,9 @@ public class BuyRegister {
     @ColumnInfo(name = "total")
     private float total;
 
-    public BuyRegister(int userID, int directionId, String date, float total) {
+    public BuyRegister(int userID, String direction, String date, float total) {
         this.userID = userID;
-        this.directionId = directionId;
+        this.direction = direction;
         this.date = date;
         this.total = total;
     }
@@ -46,12 +46,12 @@ public class BuyRegister {
         this.userID = userID;
     }
 
-    public int getDirectionId() {
-        return directionId;
+    public String getDirection() {
+        return direction;
     }
 
-    public void setDirectionId(int directionId) {
-        this.directionId = directionId;
+    public void setDirection(String direction ){
+        this.direction = direction;
     }
 
     public String getDate() {

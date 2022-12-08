@@ -1,19 +1,11 @@
 package com.example.tienda.database;
 
-import android.annotation.SuppressLint;
 import android.app.Application;
-import android.content.Context;
-
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Room;
-import androidx.room.Update;
 
 import com.example.tienda.classes.BuyRegister;
+import com.example.tienda.classes.Cart;
 import com.example.tienda.classes.Category;
 import com.example.tienda.classes.CategoryWithProducts;
-import com.example.tienda.classes.Direction;
 import com.example.tienda.classes.Product;
 import com.example.tienda.classes.User;
 import com.example.tienda.classes.UserWithDirections;
@@ -24,7 +16,7 @@ public class Repository {
 
     private ProductDao productDao;
     private CategoryDao categoryDao;
-    private DirectionDao directionDao;
+    private CartDao cartDao;
     private BuysDao buysDao;
     private UserDao userDao;
 
@@ -33,7 +25,7 @@ public class Repository {
 
         productDao = database.getProductDao();
         categoryDao = database.getCategoryDao();
-        directionDao = database.getDirectionDao();
+        cartDao = database.getCartDao();
         buysDao = database.getBuysDao();
         userDao = database.getUsersDao();
     }
@@ -97,13 +89,21 @@ public class Repository {
                 buysDao.insertBuy(aux));
     }
 
-    //Direction Functions
-    public void insertDirection(Direction aux) {
-        ApplicationDatabase.databaseWriteExecutor.execute(() ->directionDao.insertDirection(aux));};
+    public int getID(){return buysDao.getID();};
 
-    public void deleteDirection(Direction aux) {ApplicationDatabase.databaseWriteExecutor.execute(() ->directionDao.deleteDirection(aux));};
 
-    public void updateDirection(Direction aux){ApplicationDatabase.databaseWriteExecutor.execute(() -> directionDao.updateDirection(aux));};
+    //Cart Functions
+    public long insertToCart(Cart aux) {
+        return cartDao.insertItemToCart(aux);
+    }
+
+    public void deleteFromCart(Cart aux) {ApplicationDatabase.databaseWriteExecutor.execute(() -> cartDao.deleteItemInCart(aux));};
+
+    public void updateCartItem(Cart aux){ApplicationDatabase.databaseWriteExecutor.execute(() -> cartDao.updateItemInCart(aux));};
+
+    public List<Cart> getCartByUserID(int id) {return  cartDao.getCartByUserID(id);}
+
+    public Cart checkCart(int id, String productID) {return  cartDao.checkCart(id, productID);}
 
     //User Functions
     public User authenticate(String username, String password){

@@ -11,5 +11,5 @@ public class UserWithDirections {
             parentColumn = "id",
             entityColumn = "userID"
     )
-    public List<Direction> directions;
+    public List<Cart> carts;
 }
