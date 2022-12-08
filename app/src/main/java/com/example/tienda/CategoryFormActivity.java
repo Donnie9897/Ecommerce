@@ -10,8 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tienda.classes.Category;
+import com.example.tienda.classes.CategoryWithProducts;
+import com.example.tienda.classes.Product;
 import com.example.tienda.databinding.ActivityCategoryFormBinding;
 import com.example.tienda.models.ApplicationViewModel;
+
+import java.util.ArrayList;
 
 public class CategoryFormActivity extends AppCompatActivity {
 
@@ -47,6 +51,7 @@ public class CategoryFormActivity extends AppCompatActivity {
     }
 
     public void clear(View view){
+
         categoryName.setText("");
     }
     //Define and initialize binding
@@ -54,10 +59,24 @@ public class CategoryFormActivity extends AppCompatActivity {
     //Check if category name already exist in database
     //If does, show toast, else, create new product and call addCategory
     //Refresh liveData and create new intent to go back to productFragment
+    public void modCategory(Intent intent, int id){
+            if(applicationViewModel.getCategories().get(id) != null){
+
+            }
+    }
 
     //Check for intent parameter to decide if it's going to create an instance o to update one
     //If its for modify, add a button in case that the want to delete the category
     //Create another onClick for delete
 
     //Delete function checks in database if category has products, if that's the case, send Toast
+    public void deleteCategory(int id){
+        if (applicationViewModel.getCategoryWithProducts(id).products != null){
+            Toast.makeText(this, "This Category already has products! ", Toast.LENGTH_LONG).show();
+        }
+        else{
+            applicationViewModel.deleteCategory(applicationViewModel.getCategories().get(id));
+        }
+    }
+
 }

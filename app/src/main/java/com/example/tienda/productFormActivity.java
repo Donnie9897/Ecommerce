@@ -78,7 +78,7 @@ public class productFormActivity extends AppCompatActivity {
                     return;
                 }else{
                     if(Float.parseFloat(_price) <= 0){
-                        Toast.makeText(this, "Price must be grater than cero!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Price must be greater than cero!", Toast.LENGTH_LONG).show();
                         return;
                     }
                 }
@@ -111,4 +111,7 @@ public class productFormActivity extends AppCompatActivity {
     //Create another onClick for delete
 
     //Delete function checks in database if product is in order, if it's, send toast explaining
+    public void deleteProduct(String id){
+            applicationViewModel.deleteProduct(applicationViewModel.getProduct(id));
+    }
 }

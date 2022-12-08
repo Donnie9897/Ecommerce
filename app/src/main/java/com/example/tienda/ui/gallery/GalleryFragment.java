@@ -61,4 +61,5 @@ public class GalleryFragment extends Fragment {
         startActivity(intent);
     }
 
+
 }
