@@ -41,10 +41,6 @@
         android:label="Carrito"
         tools:layout="@layout/fragment_cart" />
 
-    <activity
-        android:id="@+id/nav_logout"
-        android:name="com.example.tienda.ui.Login.ui.login.LoginActivity"
-        android:label="Login"
-        tools:layout="@layout/activity_login" />
+
 
 </navigation>

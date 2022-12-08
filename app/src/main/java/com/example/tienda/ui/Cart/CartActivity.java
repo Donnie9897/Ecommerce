@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import com.example.tienda.models.ApplicationViewModel;
 
 public class CartActivity extends AppCompatActivity {
     private ActivityCartBinding binding;
-    private Button btn;
+    private Button btn, btn2;
     private RecyclerView recycler;
     private TextView txt_1,txt_2,txt_3;
     ApplicationViewModel applicationViewModel;
@@ -32,7 +33,16 @@ public class CartActivity extends AppCompatActivity {
         txt_1 = binding.txt1;
         txt_2 = binding.txt2;
         txt_3 = binding.txt3;
+        btn2 = binding.cartGoback;
         recycler = binding.recyclerCart;
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     //Create a function that gets all products from cart and load it inside a List<>
@@ -40,4 +50,5 @@ public class CartActivity extends AppCompatActivity {
     //Delete all the old items from cart
 
     //Create a new notification to the database
+
 }

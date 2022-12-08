@@ -53,6 +53,7 @@ public class GalleryFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
         // TODO: Use the ViewModel
+
     }
 
     public void regCat(View view){
